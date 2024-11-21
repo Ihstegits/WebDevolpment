@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fakultätsberechnung</title>
+    <script>
+        // Funktion zur Berechnung der Fakultät
+        function berechneFakultaet() {
+            var zahl = parseInt(document.getElementById('zahl').value);
+            if (isNaN(zahl) || zahl < 0) {
+                alert('Bitte eine nicht-negative ganze Zahl eingeben.');
+                return;
+            }
+
+            var ergebnis = 1;
+            for (var i = 1; i <= zahl; i++) {
+                ergebnis *= i;
+            }
+
+            // Ausgabe des Ergebnisses
+            document.getElementById('ergebnis').innerText = 'Die Fakultät von ' + zahl + ' ist: ' + ergebnis;
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 50px;">
+        <h1>Fakultätsberechnung</h1>
+        <input type="number" id="zahl" placeholder="Gib eine Zahl ein" style="padding: 10px; font-size: 16px;" />
+        <button onclick="berechneFakultaet()" style="padding: 10px; font-size: 16px; margin-left: 10px;">Berechnen</button>
+        <p id="ergebnis" style="font-size: 20px; margin-top: 20px;"></p>
+    </div>
+</body>
+</html>
